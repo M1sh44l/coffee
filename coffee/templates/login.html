@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block Title %}
+	Log In Page
+{% endblock Title %}
+
+{% block Body %}
+<div class="table">	
+	<div class="col-sm-6 col-sm-offset-1">
+		<h3>Please log in with your information</h3>
+		<form method="POST" action="{% url 'coffee:login' %}">
+			{% csrf_token %}
+			{{form.as_p}}
+			<button type="submit" class="btn btn-primary">Log in</button>
+		</form>
+	</div>
+</div>
+{% endblock Body %}
