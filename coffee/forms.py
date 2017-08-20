@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from .models import CoffeeBean
 
 class SignUpForm(UserCreationForm):
 	first_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
@@ -15,3 +16,9 @@ class SignUpForm(UserCreationForm):
 class SignInForm(forms.Form):
 	username = forms.CharField(max_length=30, required=True)
 	password = forms.CharField(max_length=30, required=True, widget=forms.PasswordInput())
+
+
+class CoffeeBeanForm(forms.ModelForm):
+    class Meta:
+        model = CoffeeBean
+        fields = ['bean']

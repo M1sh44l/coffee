@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block Title %}
+	The Coffee Needs List
+{% endblock Title %}
+
+{% block Body %}
+	{% for each in object_list  %}
+		No. of Beans = {{each.bean}}<br>
+	{% endfor %}
+{% endblock Body %}
